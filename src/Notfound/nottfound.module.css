@@ -1,0 +1,14 @@
+.notfound{
+    margin: 20px auto;
+    background-color: black;
+    color: white;
+    width: 600px;
+    text-align: center;
+    align-content: center;
+    height: auto;
+
+}
+
+.notfoundinner{
+    padding:20px;
+}

@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+.giphy{
+    width: 20%;
+    margin: 0 40%;
+}
+
+.giphy img{
+    width: 100%;
+}
+
+@media screen and (max-width:600px){
+    .giphy{
+        width: 80%;
+        margin: 10%;
+    }
+}

@@ -1,0 +1,37 @@
+.login{
+    background-image: url('../photos/pic2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login h1{
+    margin: 5px 0 50px 0;
+}
+
+.login .inner{
+    width: 40%;
+    margin: 10px 10% 10px 50%;
+    box-shadow: aqua;
+    box-shadow: 5px 10px 10px grey;
+    padding: 15px;
+ }
+ .login form{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     
+ }
+ .login input{
+     border-radius: 10px;
+     line-height: 25px;
+     padding: 5px;
+     margin: 2px 2px 15px 2px;
+     box-shadow: 2px 5px 10px rgb(224, 224, 224);
+ }
+
+
+
+.login .forgotpass a{
+    text-decoration: none;
+    color: blue;
+}

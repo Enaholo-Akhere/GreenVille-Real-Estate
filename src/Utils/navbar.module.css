@@ -1,0 +1,28 @@
+.Navbar{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+.Navbar a{
+    text-decoration: none;
+    color: white;
+    margin: auto 5px;
+    padding: 5pt;
+}
+.Navbar nav{
+    margin: auto 5px;
+}
+.Navbar nav a:focus{
+    color: red;
+}
+.Navbar nav a:hover{
+    color: rgb(255, 153, 153);
+    transition: .4s ease-in-out;
+    text-decoration: none;
+}
+
+.Navbar h1 a{
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,21 @@
+.button{
+    background-color: green;
+    color: white;
+    padding: 5px;
+    font-size: large;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    margin: 5px 25%;
+
+}
+
+.button:active{
+    background-color: rgb(0, 212, 0);
+}
+
+@media screen and (max-width: 600px){
+    .button{
+        width: 10px auto;
+    }
+}

@@ -1,0 +1,103 @@
+.register{
+    background-image: url('../photos/pic2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+
+.register h1{
+    margin: -20px 0 70px 0;
+}
+.register .inner{
+   width: 40%;
+   margin: 10px 10% 10px 50%;
+   box-shadow: aqua;
+   box-shadow: 5px 10px 10px grey;
+   padding: 15px;
+}
+.register form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.register form p {
+    color: red;
+}
+
+.register .errDiv{
+    background-color: rgb(211, 41, 41);
+    position: fixed;
+    margin: -50px 15px 0px -10px;
+    color: white;
+    width: 40%;
+    text-align: center;
+    font-size: 15px;
+}
+
+.register label{
+    margin-top: 15px;
+}
+.register label span{
+    color: red;
+}
+
+.register textarea{
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 2px;
+}
+
+
+.register input{
+    border-radius: 10px;
+    line-height: 25px;
+    padding: 5px;
+    margin: 2px 2px 5px 2px;
+    box-shadow: 2px 5px 10px rgb(224, 224, 224);
+}
+
+.register .passwordStrength{
+    width: 50%;
+    height: 10px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid white;
+
+}
+
+@media screen and (max-width: 600px){
+    .register .passwordStrength{
+        width: 100%;
+    }
+    .register .inner errDiv{
+        width: 100%;
+    }
+}
+
+.register .passwordStrength .passwordIner{
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    transition: .5s ease-in-out;
+}
+@media screen and (max-width:600px){
+    .register .inner{
+        width: 80%;
+        margin: 5px 15% 5px 5%;
+        box-shadow: aqua;
+        box-shadow: 5px 10px 10px grey;
+        padding: 15px;
+    }
+    .register .inner form{
+        width: 100%;
+    }
+    .register label{
+        margin-top: 15px;
+        font-weight: bolder;
+      
+    
+    }
+}

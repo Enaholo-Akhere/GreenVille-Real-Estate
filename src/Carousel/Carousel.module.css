@@ -1,0 +1,16 @@
+.carousel{
+    width: 100%;
+    margin: 10px 0%;
+    height: auto;
+}
+
+.h3, .p{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

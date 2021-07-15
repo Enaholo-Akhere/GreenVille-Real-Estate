@@ -1,25 +1,51 @@
-import logo from './logo.svg';
+import {Fragment, useState} from 'react';
 import './App.css';
+import Home from "./Home/home";
+import Login from './Login/login';
+import Signup from './Signup/signup'
+import Navbar from './Utils/navbar';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Notfound from './Notfound/notfound';
+import HouseDetails from './HouseDetails/housedetails';
+import Footer from './Footer/footer';
+import Success from './Success/success'
+import Owners from './Home/owners';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [isHome, setIsHome] = useState(false)
+  const home = (sethome) => {
+    setIsHome(sethome)
+  }
+  const [formIsSubmitted, setFormIsSubmitted] = useState(false);
+  const submitForm = (use) =>{
+    setFormIsSubmitted(use);
+  }
+   return (
+     <Router>
+     <Fragment>
+       <Navbar/>
+       <Switch>
+         <Route exact path = "/">
+         {!isHome ? <Home submithome = {home}/> : <Owners/>}
+         </Route>
+         <Route path = "/login">
+           <Login />
+         </Route>
+         <Route path = "/signup">
+           {!formIsSubmitted ? <Signup submitForm = {submitForm}/> : <Success/>}
+         </Route>
+         <Route path = "/housedetails/:id">
+           <HouseDetails />
+         </Route>
+         <Route path = "/*">
+           <Notfound />
+         </Route>
+       </Switch>
+       <Footer />
+      </Fragment>
+      </Router>
+   );
+  
 }
-
 export default App;
