@@ -1,28 +1,93 @@
-.Navbar{
-    background-color: black;
-    color: white;
+.container{
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
     display: flex;
     justify-content: space-around;
-}
-.Navbar a{
-    text-decoration: none;
-    color: white;
-    margin: auto 5px;
-    padding: 5pt;
-}
-.Navbar nav{
-    margin: auto 5px;
-}
-.Navbar nav a:focus{
-    color: red;
-}
-.Navbar nav a:hover{
-    color: rgb(255, 153, 153);
-    transition: .4s ease-in-out;
-    text-decoration: none;
+    color: #fff;
+    position: relative;
+    z-index: 99;
+    width: 100%;
 }
 
-.Navbar h1 a{
-    text-decoration: none;
+.logo{
+    font-weight: 600;
+    font-size: 25px;
     color: white;
+    background-color: black;
+}
+
+.menu_list{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo h1{
+    color: white;
+    border: 2px solid white;
+    background-color: black;
+    font: 25px;
+}
+h1 span{
+    color: yellow;
+}
+.menu_list li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+.menu_list li {
+    margin-left: 0px;
+}
+.menu_list li a:hover{
+    background-color: #fff;
+    border-radius: 2px;
+    color: #000;
+    transition: all 0.5s ease-in-out;
+}
+.menu_icon{
+    display: none;
+}
+@media screen and (max-width: 600px) {
+    .menu_icon{
+        display: block;
+    }
+    .menu_list{
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        right: 0;
+        top: 64px;
+        transition: all 0.5s ease-in-out;
+    }
+    .menu_list li{
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    .menu_list li:last-child {
+        margin-bottom: 0;
+    }
+    .menu_list li a,
+    .menu_list li:last-child a{
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    .menu_list.close{
+        right: -100%;
+        transition: all 0.3s ease-in-out;
+    }
+    .logo h1{
+        font-size: 20px;
+    }
+    .fas_times{
+        font-size: 20px;
+    }
+    .fas_bars{
+        font-size: 20px;
+    }
 }

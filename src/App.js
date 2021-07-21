@@ -1,5 +1,6 @@
 import {Fragment, useState} from 'react';
 import './App.css';
+import './index.css';
 import Home from "./Home/home";
 import Login from './Login/login';
 import Signup from './Signup/signup'
@@ -35,7 +36,7 @@ function App() {
          <Route path = "/signup">
            {!formIsSubmitted ? <Signup submitForm = {submitForm}/> : <Success/>}
          </Route>
-         <Route path = "/housedetails/:id">
+         <Route path = "/housedetails/:uniqueid">
            <HouseDetails />
          </Route>
          <Route path = "/*">

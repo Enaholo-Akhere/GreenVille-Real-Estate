@@ -4,11 +4,13 @@ import {Link} from 'react-router-dom'
 import useApi from '../Hooks/useApi';
 import Loading from '../Giphy/giphy'
 const Owners = () => {
-    const {data, Courage, isLoading} = useApi('http://localhost:8000/reg')
+    const {data, Courage, isLoading, errMessage} = useApi('http://localhost:8000/reg')
     
     return ( 
     <div className={Classes.owners}>
         {isLoading && <Loading/>}
+        {errMessage && <div>{errMessage}</div> }
+        {data && <div>
       <h1>OWNERS</h1>
         
         <h2> GreenVille House Owners</h2>
@@ -22,18 +24,19 @@ const Owners = () => {
                 <td>House ID</td>
                 <td>Owners Photo</td>
             </tr>
-            {data && data.map((data)=>(
+            {data.map((data)=>(
                 <tr key = {data.id}>
                     <td>{data.id}</td>
                     <td>{data.FirstName}</td>
                     <td>{data.LastName}</td>
-                    <td> <Link to = {`/housedetails/${data.id}`}>{data.Password}</Link> </td>
+                    <td> <Link to = {`/housedetails/${data.id}`}>{data.Code}</Link> </td>
                     <td> <img src= {Courage}alt="GreenVille" width ="" height = "" /></td>
                 </tr>
             ))}
             </tbody>
         </Table>
         </div>
+        </div>}
     </div>
      );
 }

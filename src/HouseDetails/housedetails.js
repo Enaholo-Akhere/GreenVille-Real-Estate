@@ -1,5 +1,4 @@
 import Classes from '../HouseDetails/HouseDetails.module.css';
-import Pho from '../photos/ab1.jpg';
 import Pho1 from '../photos/osayuki15.jpg';
 import Pho2 from '../photos/ab3.jpg';
 import Pho3 from '../photos/osayuki.jpg';
@@ -12,18 +11,18 @@ import Services from '../photos/our services.png';
 import useApi from '../Hooks/useApi';
 import { useParams } from 'react-router-dom';
 import Loading from '../Giphy/giphy';
-
+import {reg} from '../data/db';
 
 
 const HouseDetails = () => {
-    const {id} = useParams()
-    const {data, isLoading, isError, errMessage} = useApi('http://localhost:8000/reg/' + id);
+    const {uniqueid} = useParams()
+    const { isLoading } = useApi( {reg} );
+    console.log(reg[uniqueid].uniqueid)
     return ( 
         
         <div className ={Classes.Housedetails}>
             {isLoading && <Loading/> }
-            {isError && <div>{errMessage}</div>  }
-            {data && <div><section className={Classes.siteinfo}>
+            {reg && <div><section className={Classes.siteinfo}>
                          <div className={Classes.innerinfo}>
                             <img src={ContGif} alt="" />
                         </div>
@@ -40,14 +39,16 @@ const HouseDetails = () => {
             <section className = {Classes.container}>
                 <div className={Classes.owner}>
                     <div className ={Classes.img}> 
-                    <img src= {Pho}  alt=""/>
+                    <img src= {reg[uniqueid].Photo} alt=""/>
+        
                     <hr />
                     </div>
                     <div>
                         <h2>OWNER'S DETAILS</h2>
-                    <p>NAME: {data.FirstName} {data.LastName}</p>
-                    <p>BIO: {data.Bio}</p>
-                    <p>PROPERTY WORTH: {data.Worth}</p>
+                    <p>NAME: {reg[uniqueid].FirstName} {reg[uniqueid].LastName}</p>
+                    
+                    <p> BIO: {reg[uniqueid].Bio}</p>
+                    <p> PROPERTY WORTH: {reg[uniqueid].Worth}</p>
                     </div>
 
                 </div> 
