@@ -7,6 +7,7 @@
     position: relative;
     z-index: 99;
     width: 100%;
+    margin: 0;
 }
 
 .logo{
@@ -28,6 +29,10 @@
     background-color: black;
     font: 25px;
 }
+.logo h1 a{
+    text-decoration: none;
+    color: blue;
+}
 h1 span{
     color: yellow;
 }
@@ -36,6 +41,10 @@ h1 span{
     color: #fff;
     padding: 5px 10px;
     margin-left: 10px;
+}
+.menu_list ul{
+    width: 100%;
+    overflow: hidden;
 }
 .menu_list li {
     margin-left: 0px;
@@ -56,6 +65,7 @@ h1 span{
     .menu_list{
         flex-direction: column;
         width: 100%;
+        margin: 0;
         position: absolute;
         background-color: rgba(0, 0, 0, 0.7);
         padding: 20px;
@@ -80,6 +90,8 @@ h1 span{
     .menu_list.close{
         right: -100%;
         transition: all 0.3s ease-in-out;
+        position: fixed;
+        margin: 0
     }
     .logo h1{
         font-size: 20px;
@@ -89,5 +101,8 @@ h1 span{
     }
     .fas_bars{
         font-size: 20px;
+    }
+    .container{
+        margin: 0;
     }
 }

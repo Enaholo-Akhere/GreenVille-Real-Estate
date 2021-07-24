@@ -24,7 +24,7 @@ const onsetSubmit =() =>{
                 <img src={pht2} alt="" className ={Classes.image__img} />
                     <div className={[Classes.image__overlay, Classes.image__overlay__blur].join(' ')}>
                     <div className={Classes.image__title}>LETS GO IN :) </div>
-                    <p className = {Classes.image__description}><Link to ="signup"> <Button>REGISTER NOW</Button> </Link></p>
+                    <p className = {Classes.image__description}><Button onClick = {onsetSubmit}>REGISTER NOW</Button></p>
                 </div>
             </div>
         </div>
@@ -32,9 +32,10 @@ const onsetSubmit =() =>{
                     
             <div className={Classes.box_1}>
                 <div className={Classes.inner_box1}>
-                    <p><h2 className={Classes.aboutheader}>
-                        ABOUT THE COMPANY
-                    </h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quo perspiciatis explicabo eveniet culpa fugit facilis dolore doloribus itaque quaerat.</p>
+                <h2 className={Classes.aboutheader}>
+                      ABOUT THE COMPANY
+                 </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quo perspiciatis explicabo eveniet culpa fugit facilis dolore doloribus itaque quaerat.</p>
                 </div>
             </div>
         
@@ -115,7 +116,7 @@ const onsetSubmit =() =>{
                 <p>enaholoa@gmail.com</p>
                 <h4>Phone No</h4>
                 <p>+2349052781743  +2348087788617</p>
-            <Button onClick = {onsetSubmit}>Contact Me</Button>
+            <Button onClick = {onsetSubmit} >Contact Me</Button>
             </div>
         </div>
     </div>

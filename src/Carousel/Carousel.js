@@ -2,9 +2,9 @@ import {Carousel} from 'react-bootstrap'
 import Classes from './Carousel.module.css'
 const Carousels = (props) => {
     return ( 
-        <div className={Classes.carousel}>
-        <Carousel>
-  <Carousel.Item>
+     <div className={Classes.carousel}>
+       <Carousel>
+      <Carousel.Item>
     <img
       className="d-block w-100"
       src={props.photo1}

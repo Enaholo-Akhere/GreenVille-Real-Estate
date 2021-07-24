@@ -1,6 +1,4 @@
 import {Fragment, useState} from 'react';
-import './App.css';
-import './index.css';
 import Home from "./Home/home";
 import Login from './Login/login';
 import Signup from './Signup/signup'
@@ -21,9 +19,11 @@ function App() {
   const [formIsSubmitted, setFormIsSubmitted] = useState(false);
   const submitForm = (use) =>{
     setFormIsSubmitted(use);
+    console.log(use)
   }
    return (
      <Router>
+       
      <Fragment>
        <Navbar/>
        <Switch>
@@ -36,7 +36,7 @@ function App() {
          <Route path = "/signup">
            {!formIsSubmitted ? <Signup submitForm = {submitForm}/> : <Success/>}
          </Route>
-         <Route path = "/housedetails/:uniqueid">
+         <Route path = "/housedetails/:id">
            <HouseDetails />
          </Route>
          <Route path = "/*">

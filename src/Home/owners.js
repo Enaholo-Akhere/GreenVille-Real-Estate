@@ -2,7 +2,7 @@ import Classes from './owners.module.css';
 import Table  from 'react-bootstrap/Table';
 import {Link} from 'react-router-dom'
 import useApi from '../Hooks/useApi';
-import Loading from '../Giphy/giphy'
+import Loading from '../Giphy/giphy';
 const Owners = () => {
     const {data, Courage, isLoading, errMessage} = useApi('http://localhost:8000/reg')
     
@@ -24,12 +24,13 @@ const Owners = () => {
                 <td>House ID</td>
                 <td>Owners Photo</td>
             </tr>
-            {data.map((data)=>(
-                <tr key = {data.id}>
-                    <td>{data.id}</td>
+            {data.map((data, index )=>(
+                
+                <tr key = {data.id} >
+                    <td>{index + 1}</td>
                     <td>{data.FirstName}</td>
                     <td>{data.LastName}</td>
-                    <td> <Link to = {`/housedetails/${data.id}`}>{data.Code}</Link> </td>
+                    <td> <Link to = {`/housedetails/${data.id}`}>{data.id}</Link> </td>
                     <td> <img src= {Courage}alt="GreenVille" width ="" height = "" /></td>
                 </tr>
             ))}

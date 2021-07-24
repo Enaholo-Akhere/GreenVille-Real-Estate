@@ -13,7 +13,7 @@ const Navbar = () => {
     return (
         <div className = {ClassesNav.container}>
             <div className={ClassesNav.logo}>
-                <h1>GreenVille<span>.com</span></h1>
+               <NavLink to = "/" activeStyle = {{textDecoration: "none"}}> <h1>GreenVille<span>.com</span></h1></NavLink>
             </div>
             <div className = {ClassesNav.menu_icon} onClick = {handlerClick}>
                 <i>{clicked? <FaTimes className = {ClassesNav.fas_times}/> : <FaBars className = {ClassesNav.fas_bars}/>}</i>

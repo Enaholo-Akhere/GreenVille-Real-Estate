@@ -11,18 +11,18 @@ import Services from '../photos/our services.png';
 import useApi from '../Hooks/useApi';
 import { useParams } from 'react-router-dom';
 import Loading from '../Giphy/giphy';
-import {reg} from '../data/db';
 
 
 const HouseDetails = () => {
-    const {uniqueid} = useParams()
-    const { isLoading } = useApi( {reg} );
-    console.log(reg[uniqueid].uniqueid)
+    const {id} = useParams()
+    const { isLoading, data, isError, errMessage } = useApi('http://localhost:8000/reg/'+id);
     return ( 
-        
+        <>
         <div className ={Classes.Housedetails}>
+            
             {isLoading && <Loading/> }
-            {reg && <div><section className={Classes.siteinfo}>
+            {isError && <div>{ errMessage }</div>}
+            {data && <div><section className={Classes.siteinfo}>
                          <div className={Classes.innerinfo}>
                             <img src={ContGif} alt="" />
                         </div>
@@ -39,16 +39,16 @@ const HouseDetails = () => {
             <section className = {Classes.container}>
                 <div className={Classes.owner}>
                     <div className ={Classes.img}> 
-                    <img src= {reg[uniqueid].Photo} alt=""/>
+                    <img src= {data.Photo} alt=""/>
         
                     <hr />
                     </div>
                     <div>
                         <h2>OWNER'S DETAILS</h2>
-                    <p>NAME: {reg[uniqueid].FirstName} {reg[uniqueid].LastName}</p>
+                    <p>NAME: {data.FirstName} {data.LastName}</p>
                     
-                    <p> BIO: {reg[uniqueid].Bio}</p>
-                    <p> PROPERTY WORTH: {reg[uniqueid].Worth}</p>
+                    <p> BIO: {data.Bio}</p>
+                    <p> PROPERTY WORTH: {data.Worth}</p>
                     </div>
 
                 </div> 
@@ -101,6 +101,7 @@ const HouseDetails = () => {
                  </div>        
             </div>}
         </div>
+        </>
      );
 }
  
