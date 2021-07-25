@@ -1,5 +1,5 @@
 import { useState,useEffect } from 'react';
-import Validation from '../Validate/validation'
+import Validation from '../Validate/validation';
 
 const useForm = (submitForm) => {
     const [dataIsCorrect, setDataIsCorrect] = useState(false)
@@ -12,7 +12,6 @@ const useForm = (submitForm) => {
         Bio: "",
         Worth: ""
     });
-
 const handleSubmit = (event) => {
     event.preventDefault();
     setError(Validation(values));
@@ -23,6 +22,7 @@ const handleSubmit = (event) => {
         body: JSON.stringify(values)
     }).then(()=>{
         console.log("submit")
+
     })
     setDataIsCorrect(true)
 }

@@ -17,6 +17,11 @@
     width: 80%;
     margin: 20px 10%;
 }
+.table button{
+    background-color: inherit;
+    color: white;
+}
+
 .table img{
     width: 120px;
 }
@@ -25,7 +30,5 @@
         width: 100%;
         margin: 20px 0%;
     }
-    .table img{
-        width: 50px;
-    }
+    
 }

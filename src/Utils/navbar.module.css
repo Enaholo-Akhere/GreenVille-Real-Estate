@@ -25,17 +25,32 @@
 }
 .logo h1{
     color: white;
-    border: 2px solid white;
+    border: 5px solid white;
     background-color: black;
-    font: 25px;
+    font-size: 20px;
 }
+
+.logo span{
+    background-color:green;
+    color: white;
+    padding: 5px;
+    font-size: 40px;
+}
+@media screen and (max-width: 600px){
+    .logo h1{
+        font-size: 15px;
+    }
+    .logo span{
+        font-size: 35px;
+    }
+}
+
 .logo h1 a{
     text-decoration: none;
     color: blue;
 }
-h1 span{
-    color: yellow;
-}
+
+
 .menu_list li a{
     text-decoration: none;
     color: #fff;

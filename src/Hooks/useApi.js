@@ -1,6 +1,5 @@
 import {useEffect, useState} from 'react';
 
-
 const useApi = (url) => {
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false)
@@ -22,10 +21,12 @@ const useApi = (url) => {
                 setIsLoading(false)
                 
             })
+
+            
         }, 1000)
         
         },[url])
-    return { isLoading, data, isError, errMessage };
+    return { isLoading, data, isError, errMessage};
      
 }
  

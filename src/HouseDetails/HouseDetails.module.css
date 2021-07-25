@@ -33,11 +33,19 @@
     background-color: black;
     justify-content: space-between;
 }
+.owner__container{
+    width: 100%;
+    margin: 10px 0%;
+}
 
 .owner img{
     margin: 10px;
     padding: auto;
     width: 300px;
+}
+.owner h2{
+    color: white;
+    padding: 10px;
 }
 .owner p{
     font-weight: bold;
@@ -49,6 +57,18 @@
 .owner .img{
     align-content: center;
 }
+.owner .ownerdata{
+    width: 100%;
+    margin: 5px 0%;
+}
+.owner .ownerdata p{
+    max-width: 100%;
+    text-align: left;
+    margin: 5px 0%;
+    background:linear-gradient(270deg, black, green, gray);
+    padding: 5px;
+}
+
 
 @media screen and (max-width:800px){
     
@@ -61,7 +81,24 @@
    .owner{
        flex-direction: column;
    }
+   .container{
+       width: 100%;
+       margin: 0;
+   }
+   .owner .ownerdata{
+    width: 100%;
+    margin: 5px 0%;
 }
+.owner .ownerdata p{
+    width: 100%;
+    padding: 10 20px;
+   
+}
+.owner__container{
+    width: 100%;
+}
+}
+
 .owner hr{
     background-color: lightgreen;
     line-height: 20%;
@@ -140,10 +177,8 @@
     width: 230px;
     font-family: 'Alex Brush';
     padding: 2px;
-    clear: both;
     color: green;
     text-shadow: 2px 2px 5px;
-    border: 1px solid green;
     border-radius: 5px;
 }
 
@@ -161,6 +196,10 @@
     border-radius: 10px;
     height: 100%;
     
+  }
+  .siteinfo{
+      width: 100%;
+      margin: 10px 0;
   }
 
 }

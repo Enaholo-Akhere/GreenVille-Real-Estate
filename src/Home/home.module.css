@@ -87,7 +87,7 @@
     border-bottom-left-radius: 50px;
     border-top-right-radius: 50px;
 }
-/*@media screen and (max-width: 600px){
+@media screen and (max-width: 600px){
     .image__description{
         width: 400px;
         line-height: 50px;
@@ -96,12 +96,12 @@
         font-size: 5em;
     }
 }
-*/
+
 
 .aboutus{
     display: grid;
-    width: 50%;
-    margin: 10px 0%;
+    width: 60%;
+    margin: 10px auto;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: repeat(1fr, 1fr);
     gap: 10px;
@@ -121,6 +121,8 @@
     grid-row-end: 4;
     text-align: center;
     background-color: white;
+    position: relative;
+    bottom: 70;
 }
 .aboutus .box_1 p{
     color: black;

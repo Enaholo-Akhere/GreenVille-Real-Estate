@@ -1,14 +1,16 @@
 import Classes from './signup.module.css';
 import Button from "../Utils/button";
-import useForm from '../useForm/useForm';
+import useForm from '../Hooks/useForm';
+import {FaUserPlus} from 'react-icons/fa';
 
 const Signup = ({submitForm}) => {
-    const {handleSubmit, handleChange, values, errors, length } = useForm(submitForm)
+    const {handleSubmit, handleChange, values, errors, length } = useForm(submitForm);
+    
     
     return ( 
         <div className = {Classes.register}>
             <div className = { Classes.inner}>
-            <h1>Signup Page</h1>
+            <h1>Register User <FaUserPlus/></h1>
             <form onSubmit = {handleSubmit} >
                 <label htmlFor="Fname">First Name:<span>*</span></label>
                 <input type="text"  id="Fname"  onChange = {handleChange} name = "FirstName" value = {values.FirstName}/>

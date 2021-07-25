@@ -1,5 +1,4 @@
 import Classes from './home.module.css';
-import {Link} from 'react-router-dom'
 import pht from '../photos/ab.jpg';
 import pht2 from '../photos/Courage1.jpg';
 import pht3 from '../photos/oro12.jpg';

@@ -1,6 +1,21 @@
 import Classes from '../HouseDetails/HouseDetails.module.css';
 import Pho1 from '../photos/osayuki15.jpg';
 import Pho2 from '../photos/ab3.jpg';
+import Ab from '../photos/ab4.jpg';
+import Ab1 from '../photos/ab13.jpg';
+import Ab16 from '../photos/ab16.jpg';
+import Courage from '../photos/Courage.jpg';
+import Courage1 from '../photos/courage3.jpg';
+import Courage4 from '../photos/courage4.jpg';
+import Courage5 from '../photos/courage5.jpg';
+import Courage7 from '../photos/courage7.jpg';
+import Courage8 from '../photos/courage8.jpg';
+import Courage14 from '../photos/courage14.jpg';
+import Osayuki10 from '../photos/osayuki10.jpg';
+import Osayuki6 from '../photos/osayuki16.jpg';
+import Osayuki7 from '../photos/osayuki17.jpg';
+import Miracle from '../photos/miracle.jpg';
+import Miracle7 from '../photos/miracle7.jpg';
 import Pho3 from '../photos/osayuki.jpg';
 import ContGreen from '../photos/contact green.png';
 import ContGif from '../photos/contgif.gif';
@@ -11,17 +26,28 @@ import Services from '../photos/our services.png';
 import useApi from '../Hooks/useApi';
 import { useParams } from 'react-router-dom';
 import Loading from '../Giphy/giphy';
+import ErrMessages from '../Notfound/errmessages';
+import Button from '../Utils/button';
+import { useHistory } from 'react-router-dom'
 
 
 const HouseDetails = () => {
+    const history = useHistory();
     const {id} = useParams()
     const { isLoading, data, isError, errMessage } = useApi('http://localhost:8000/reg/'+id);
+    const handleDel = () =>{
+        fetch('http://localhost:8000/reg/' +id, {
+            method: 'DELETE'
+        }).then(()=>{
+            history.push('/')
+        })
+    }
     return ( 
         <>
         <div className ={Classes.Housedetails}>
             
             {isLoading && <Loading/> }
-            {isError && <div>{ errMessage }</div>}
+            {isError && <div>{<ErrMessages title = {'Error 404: Page Not Found'} url = {'/housedetails/'+id} btnname = {'REFRESH'} body = {errMessage} />}</div>}
             {data && <div><section className={Classes.siteinfo}>
                          <div className={Classes.innerinfo}>
                             <img src={ContGif} alt="" />
@@ -39,16 +65,18 @@ const HouseDetails = () => {
             <section className = {Classes.container}>
                 <div className={Classes.owner}>
                     <div className ={Classes.img}> 
-                    <img src= {data.Photo} alt=""/>
+                    <img src= {Pho1} alt=""/>
         
                     <hr />
                     </div>
-                    <div>
+                    <div className = {Classes.owner__container}>
                         <h2>OWNER'S DETAILS</h2>
+                        <div className = {Classes.ownerdata}>
                     <p>NAME: {data.FirstName} {data.LastName}</p>
-                    
+                    <p> HOUSE ID: {data.id}</p>
                     <p> BIO: {data.Bio}</p>
                     <p> PROPERTY WORTH: {data.Worth}</p>
+                    </div>
                     </div>
 
                 </div> 
@@ -60,7 +88,36 @@ const HouseDetails = () => {
             <section className = {Classes.secdetails}>
                 
                 <div className={Classes.homedetails}>
-                    
+                    <img src={Ab} alt="" />
+                    <p>Bedroom</p>
+                </div>
+                <div className={Classes.homedetails}>
+                    <img src={Ab16} alt="" />
+                    <p>Bathroom</p>
+                </div>
+                <div className={Classes.homedetails}>
+                    <img src={Courage} alt="" />
+                    <p>Outside View</p>
+                </div>
+                <div className={Classes.homedetails}>
+                    <img src={Courage1} alt="" />
+                            <p>Party Room</p>
+                </div>
+                <div className={Classes.homedetails}>
+                    <img src={Courage4} alt="" />
+                            <p>Dinning 1</p>
+                </div>
+                <div className={Classes.homedetails}>
+                    <img src={Courage5} alt="" />
+                            <p>Dinning 2</p>
+                </div>
+                <div className={Classes.homedetails}>
+                    <img src={Courage7} alt="" />
+                            <p>Sitting Room</p>
+                </div>
+                <div className={Classes.homedetails}>
+                    <img src={Ab} alt="" />
+                            <p>Bedroom (Kids)</p>
                 </div>
 
             </section>
@@ -70,7 +127,36 @@ const HouseDetails = () => {
             <section className = {Classes.secdetails}>
                 
                 <div className={Classes.homedetails}>
-                    
+                <img src={Ab1} alt="" />
+                <p>Master Bedroom</p>
+                </div>
+                <div className={Classes.homedetails}>
+                <img src={Courage8} alt="" />
+                <p>Bathroom</p>
+                </div>
+                <div className={Classes.homedetails}>
+                <img src={Courage14} alt="" />
+                <p>Bathroom 2</p>
+                </div>
+                <div className={Classes.homedetails}>
+                <img src={Osayuki10} alt="" />
+                <p>Movies</p>
+                </div>
+                <div className={Classes.homedetails}>
+                <img src={Osayuki7} alt="" />
+                <p>Gymnasium</p>
+                </div>
+                <div className={Classes.homedetails}>
+                <img src={Osayuki6} alt="" />
+                <p>Waiting Room</p>
+                </div>
+                <div className={Classes.homedetails}>
+                <img src={Miracle} alt="" />
+                <p>Swimming Pool</p>
+                </div>
+                <div className={Classes.homedetails}>
+                <img src={Miracle7} alt="" />
+                <p>Luxury Bedroom</p>
                 </div>
             </section>
             </div>
@@ -99,6 +185,8 @@ const HouseDetails = () => {
                 </div>
                 
                  </div>        
+                 
+                <Button onClick = {handleDel}>DELETE DETAILS</Button>
             </div>}
         </div>
         </>

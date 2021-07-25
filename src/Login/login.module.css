@@ -35,3 +35,9 @@
     text-decoration: none;
     color: blue;
 }
+@media screen and (max-width: 600px){
+    .login .inner{
+        width: 100%;
+        margin: 10px 0;
+    }
+}
