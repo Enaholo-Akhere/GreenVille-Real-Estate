@@ -1,35 +1,49 @@
 import Classes from './owners.module.css';
 import Table  from 'react-bootstrap/Table';
-import {Link} from 'react-router-dom'
+import {Link,  useHistory} from 'react-router-dom';
 import useApi from '../Hooks/useApi';
 import Loading from '../Giphy/giphy';
-import ErrMessages from '../Notfound/errmessages';
-import { FaTrash, FaEdit } from 'react-icons/fa';
-import {useParams} from 'react-router-dom';
+import Dialogue from '../Utils/errModal/errmessages';
+import { FaUserEdit, FaTrash } from 'react-icons/fa';
+import { useState } from 'react';
 
-const Owners = () => {
-    const {id} = useParams()
-    const {data, Courage, isLoading, errMessage} = useApi('http://localhost:8000/reg')
+const Owners = ({deleteuser}) => {
+    const history = useHistory();
+    const [isTrue, setIsTrue] = useState(false);
+    const [title, setTitle] = useState();
+    const [body, setBody] = useState();
+    const {data, isLoading} = useApi('http://localhost:8000/reg')
+
     const handleDel = () =>{
-        fetch('http://localhost:8000/reg/' + data.id, {
+        deleteuser(true)
+        setTitle( data.FirstName + 'Are You Sure?')
+        setBody('once deleted cannot be retrieved...')
+    }
+
+    const deleteUser = () =>{
+        fetch('http://localhost:8000/reg'+data.id, {
             method: 'DELETE'
         }).then(()=>{
-            console.log("Deleted")
+            history.push('/owners')
         })
+        setIsTrue(false)
     }
 
     const handleEdit = () =>{
-        
+
+    }
+    const onCancel = () =>{
+        setIsTrue(false);
     }
     
     return ( 
     <div className={Classes.owners}>
         {isLoading && <Loading/>}
-        {errMessage && <div>{<ErrMessages title = {'Error 404: Page Not Found'} url = {'/'} btnname = {'REFRESH'} body = {errMessage} />}</div>}
+        {isTrue && <Dialogue title = {title} url = {'/owners'} cancel = {'Cancel'} btnname = {'Delete'} body = {body} onCancel = {onCancel} onClick = {deleteUser}/>}
         {data && <div>
-      <h1>OWNERS</h1>
+      <h1>(GPF's)</h1>
         
-        <h2> GreenVille House Owners</h2>
+        <h2> GreenVille Property Freeholders</h2>
         <div className={Classes.table}>
         <Table striped variant="dark" className ={Classes.innerdiv}>
             <tbody>
@@ -47,7 +61,7 @@ const Owners = () => {
                     <td>{data.FirstName}</td>
                     <td>{data.LastName}</td>
                     <td> <Link to = {`/housedetails/${data.id}`}>{data.id}</Link> </td>
-                    <td><button onClick = {handleDel}>{<FaTrash/>}</button > <button onClick = {handleEdit}>{<FaEdit/>}</button></td>
+                    <td><Link to = {'/owners'}><button onClick = {handleDel}>{<FaTrash/>}</button ></Link> <button onClick = {handleEdit}>{<FaUserEdit/>}</button></td>
                 </tr>
             ))}
             </tbody>

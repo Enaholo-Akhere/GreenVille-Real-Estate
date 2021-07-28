@@ -24,30 +24,44 @@ import Carousels from '../Carousel/Carousel'
 import OurClients from '../photos/GreenVille Real Estate.png';
 import Services from '../photos/our services.png';
 import useApi from '../Hooks/useApi';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import Loading from '../Giphy/giphy';
-import ErrMessages from '../Notfound/errmessages';
+import Dialogue from '../Utils/errModal/errmessages';
 import Button from '../Utils/button';
-import { useHistory } from 'react-router-dom'
+import { useState } from 'react';
 
 
 const HouseDetails = () => {
+    const [isTrue, setIsTrue] = useState(false);
+    const [title, setTitle] = useState();
+    const [body, setBody] = useState();
     const history = useHistory();
     const {id} = useParams()
     const { isLoading, data, isError, errMessage } = useApi('http://localhost:8000/reg/'+id);
     const handleDel = () =>{
-        fetch('http://localhost:8000/reg/' +id, {
-            method: 'DELETE'
-        }).then(()=>{
-            history.push('/')
-        })
+        fetch('http://localhost:8000/reg/'+id, {
+          method: 'DELETE'
+      }).then(()=>{
+          history.push('/owners')
+          console.log(id)
+      })
+    }
+    
+    const onCancel = () =>{
+        setIsTrue(false)
+    }
+
+    const onConfirm = ()=>{
+        setIsTrue(true);
+        setTitle(data.FirstName + 'Are You Sure?')
+        setBody('once deleted cannot be retrieved...')
     }
     return ( 
         <>
-        <div className ={Classes.Housedetails}>
-            
+        <div className ={Classes.Housedetails} onConfirm ={onCancel}>
             {isLoading && <Loading/> }
-            {isError && <div>{<ErrMessages title = {'Error 404: Page Not Found'} url = {'/housedetails/'+id} btnname = {'REFRESH'} body = {errMessage} />}</div>}
+            {isError && <div>{errMessage}</div>}
+            {isTrue && <Dialogue title = {title} url = {'/owners'} cancel = {'Cancel'} btnname = {'Delete'} body = {body} onCancel = {onCancel} onClick = {handleDel}/>}
             {data && <div><section className={Classes.siteinfo}>
                          <div className={Classes.innerinfo}>
                             <img src={ContGif} alt="" />
@@ -186,7 +200,7 @@ const HouseDetails = () => {
                 
                  </div>        
                  
-                <Button onClick = {handleDel}>DELETE DETAILS</Button>
+                <Button onClick = {onConfirm}>DELETE DETAILS</Button>
             </div>}
         </div>
         </>

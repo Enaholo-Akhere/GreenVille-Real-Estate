@@ -1,0 +1,80 @@
+.container{
+    background-image: url('../photos/green.png');
+    margin-bottom: 20px
+}
+
+
+.register_container > h1:first-child{
+    color: white;
+    text-shadow: 5px 5px 8px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 30%;
+    margin: 0 35% 20px 35%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+@media screen and (max-width:600px){
+    .register_container > h1:first-child{
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+}
+
+.signup__login{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 200px;
+    
+}
+
+@media screen and (max-width:600px){
+    .signup__login{
+        padding-right: 20px;
+    }
+}
+
+
+.signup__buttons{
+    width: 100px;
+    background-color: green;
+    color: white;
+    text-align: left;
+    transition: all ease-in-out 0.5s;
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.login__buttons{
+    width: 100px;
+    background-color: white;
+    color: green;
+    text-align: left;
+    transition: all ease-in-out 0.5s;
+    padding: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.signup__buttons_reg{
+    width: 100px;
+    background-color: white;
+    color: green;
+    text-align: left;
+    transition: all ease-in-out 0.5s;
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.login__buttons_log{
+    width: 100px;
+    background-color: green;
+    color: white;
+    text-align: left;
+    transition: all ease-in-out 0.5s;
+    padding: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

@@ -2,13 +2,8 @@
     background-image: url('../photos/pic2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
 
-
-.register h1{
-    margin: -20px 0 70px 0;
-}
 .register .inner{
    width: 40%;
    margin: 10px 10% 10px 50%;

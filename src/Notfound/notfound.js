@@ -1,6 +1,6 @@
 
 import Classes from '../Notfound/nottfound.module.css';
-import ErrMessages from '../Notfound/errmessages'
+import ErrMessages from '../Utils/errModal/errmessages'
 
 const Notfound = () => {
     return ( 

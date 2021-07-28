@@ -12,11 +12,19 @@ const useForm = (submitForm) => {
         Bio: "",
         Worth: ""
     });
+
 const handleSubmit = (event) => {
     event.preventDefault();
     setError(Validation(values));
-    setDataIsCorrect(true);
-    fetch('http://localhost:8000/reg', {
+    if(Object.keys(errors).length === 0){
+    setDataIsCorrect(true)
+    }
+}
+
+//submitting the user data using useEffect Hook
+useEffect(()=>{
+    if(Object.keys(errors).length === 0 && dataIsCorrect){
+        fetch('http://localhost:8000/reg', {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(values)
@@ -24,9 +32,11 @@ const handleSubmit = (event) => {
         console.log("submit")
 
     })
-    setDataIsCorrect(true)
-}
+        submitForm(true);
+    }
+ },[errors, submitForm, dataIsCorrect, values])
 
+//Function to set values on changes
 const handleChange = (event) =>{
     setValues({
         ...values,
@@ -38,11 +48,6 @@ const handleChange = (event) =>{
     }
 
 }
- useEffect(()=>{
-    if(Object.keys(errors).length === 0 && dataIsCorrect){
-        submitForm(true);
-    }
- },[errors, submitForm, dataIsCorrect])
 
 return {handleSubmit, handleChange, values, errors, length};
 
