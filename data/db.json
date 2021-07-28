@@ -44,6 +44,22 @@
       "Phone": "08163826187",
       "Worth": "$40,000,000",
       "Photo": "Blessed"
+    },
+    {
+      "FirstName": "Akhere",
+      "LastName": "Enaholo",
+      "Phone": "09087256321",
+      "Bio": "i just created my first react app project, and i hope you will love it",
+      "Worth": "se334",
+      "id": "TQ-PfXe"
+    },
+    {
+      "FirstName": "Gerrard",
+      "LastName": "Ronaldo",
+      "Phone": "09072846263",
+      "Bio": "Thank you jesus",
+      "Worth": "200,000,000",
+      "id": "9TVS4ZP"
     }
   ]
 }

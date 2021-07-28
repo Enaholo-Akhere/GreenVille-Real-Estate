@@ -16,7 +16,7 @@ const Owners = ({deleteuser}) => {
 
     const handleDel = () =>{
         deleteuser(true)
-        setTitle( data.FirstName + 'Are You Sure?')
+        setTitle( data.FirstName + ' ' + 'Are You Sure?')
         setBody('once deleted cannot be retrieved...')
     }
 

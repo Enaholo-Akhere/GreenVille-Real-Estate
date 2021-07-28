@@ -17,8 +17,9 @@
 }
 @media screen and (max-width:600px){
     .register_container > h1:first-child{
-        width: 100%;
-        margin: 0 0 20px 0;
+        width: fit-content;
+        margin: 0 30% 20px 30%;
+        font-size: 20px;
     }
 }
 
@@ -77,4 +78,23 @@
     padding: 5px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+@media screen and (max-width: 600px){
+    .login__buttons_log{
+        width: 100px;
+        padding: 2px;
+    }
+    .signup__buttons_reg{
+        width: 100px;
+        padding: 2px;
+    }
+    .login__buttons{
+        width: 100px;
+        padding: 2px;
+    }
+    .signup__buttons{
+        width: 100px;
+        padding: 2px;
+    }
 }
