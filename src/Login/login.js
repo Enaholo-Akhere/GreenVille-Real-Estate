@@ -9,7 +9,7 @@ const Signup = () => {
         <div className = {Classes.login}>
             
             <div className = { Classes.inner}>
-            <h1>Login Page <FaSignInAlt/></h1>
+            <h1>Login <FaSignInAlt/></h1>
             <form >
                 <label htmlFor="Fname">First Name:</label>
                 <input type="text" name="" id="Fname" />

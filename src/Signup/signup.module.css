@@ -15,6 +15,10 @@
    background-color: white;
    border: 1px solid rgb(224, 224, 224);
 }
+
+.inner h1{
+    margin-top: 10px;
+}
 .register form{
     display: flex;
     flex-direction: column;
@@ -93,7 +97,6 @@
     .register .inner{
         width: 90%;
         margin: 5px 5% 5px 5%;
-        box-shadow: aqua;
         box-shadow: 5px 10px 10px rgb(224, 224, 224);
         padding: 5px;
     }
@@ -107,4 +110,50 @@
       
     
     }
+}
+/*signup with social media*/
+.socialmedia{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+.socialmedia hr{
+    width: calc(150px - 50px);
+    margin: 10px;
+    background-color: rgb(224, 224, 224);
+    height: 1px;
+}
+
+.social_icons{
+    display: flex;
+    justify-content: center;
+}
+
+.social_icons div{
+    margin: 5px 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.social_icons div:first-child{
+    color: #DB4437;
+}
+.social_icons div:last-child{
+    color: #1DA1F2;
+}
+.social_icons div:nth-child(2){
+    color: #4267B2;
+}
+/*terms of service*/
+.terms{
+    width: fit-content;
+    display: flex;
+    background-color: transparent;
+    justify-content: flex-start;
+}
+
+.terms input{
+    background-color: transparent;
+    height: fit-content;
+    padding-right: 5px;
 }

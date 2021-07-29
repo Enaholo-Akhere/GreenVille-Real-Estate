@@ -39,10 +39,10 @@ const Footer = () => {
                 <div className={Classes.footerelement}>
                 <h4>NEWS LETTER</h4>
                 <form action="">
-                    <label htmlFor="name">Name:</label>
-                    <input type="text" name="" id="name" />
-                    <label htmlFor="mail">E-Mail:</label>
-                    <input type="email" name="" id="mail" />
+                    <label htmlFor="name"></label>
+                    <input type="text" name="" id="name" placeholder = "Name" />
+                    <label htmlFor="mail"></label>
+                    <input type="email" name="" id="mail" placeholder = "E-mail"/>
                     <Button>Subscribe</Button>
                 </form>
                 </div>
