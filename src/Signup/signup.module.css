@@ -1,20 +1,28 @@
 .register{
-    background-image: url('../photos/pic2.jpg');
+    background-image: url('../photos/pexels-evie-shaffer-2512387.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: left;
+    width: 100%;
 }
 
 .register .inner{
    width: 40%;
    margin: 10px 10% 10px 50%;
    box-shadow: aqua;
-   box-shadow: 5px 10px 10px grey;
+   box-shadow: 5px 10px 10px rgb(224, 224, 224);
    padding: 15px;
+   background-color: white;
+   border: 1px solid rgb(224, 224, 224);
 }
 .register form{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 80%;
+    margin: 20px 10%;
+    background-color: white;
+    
 }
 .register form p {
     color: red;
@@ -45,11 +53,14 @@
 
 
 .register input{
-    border-radius: 10px;
+    border-radius: 5px;
     line-height: 25px;
     padding: 5px;
-    margin: 2px 2px 5px 2px;
+    margin: 2px 2px 15px 2px;
     box-shadow: 2px 5px 10px rgb(224, 224, 224);
+    height: 3rem;
+    outline: none;
+    border: 1px solid #707070;
 }
 
 .register .passwordStrength{
@@ -80,14 +91,15 @@
 }
 @media screen and (max-width:600px){
     .register .inner{
-        width: 100%;
-        margin: 5px 0% 5px 0%;
+        width: 90%;
+        margin: 5px 5% 5px 5%;
         box-shadow: aqua;
-        box-shadow: 5px 10px 10px grey;
-        padding: 15px;
+        box-shadow: 5px 10px 10px rgb(224, 224, 224);
+        padding: 5px;
     }
-    .register .inner form{
-        width: 100%;
+     .register .inner form{
+        width: 80%;
+        margin: 10px 10%;
     }
     .register label{
         margin-top: 15px;
